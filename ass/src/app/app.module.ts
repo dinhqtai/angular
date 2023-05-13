@@ -9,9 +9,6 @@ import { HeaderComponent } from './layout/header-user/header.component';
 import { FooterComponent } from './layout/footer-user/footer.component';
 import { FooterAdminComponent } from './layout/footer-admin/footer-admin.component';
 import { HeaderAdminComponent } from './layout/header-admin/header-admin.component';
-import { HomeComponent } from './pages/user/home/home.component';
-import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +18,6 @@ import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.componen
     FooterComponent,
     FooterAdminComponent,
     HeaderAdminComponent,
-    HomeComponent,
-    HomeAdminComponent,
   ],
   imports: [
     BrowserModule,
