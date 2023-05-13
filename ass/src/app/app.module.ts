@@ -17,7 +17,7 @@ import { HeaderAdminComponent } from './layout/header-admin/header-admin.compone
     HeaderComponent,
     FooterComponent,
     FooterAdminComponent,
-    HeaderAdminComponent,
+    HeaderAdminComponent
   ],
   imports: [
     BrowserModule,
