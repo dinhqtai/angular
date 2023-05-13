@@ -1,17 +1,16 @@
 <div class='flex h-[350px] w-[700px] mx-auto mt-[150px] rounded-2xl bg-red-500'>
-    <form action="" class='w-[500px]'>
+    <form class='w-[500px]'>
         <div class='mx-[100px]'>
             <div class='mt-[60px]'>Email</div>
             <input
                 class='w-[300px] h-[30px] focus:outline-none focus:border-sky-500 focus:ring-1  focus:ring-sky-500 border border-slate-300 rounded-md'
-                type="text" />
+                type="text" [(ngModel)]="email" />
             <div class='mt-[20px]'>Mật khẩu</div>
             <input
                 class='w-[300px] h-[30px] focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 border border-slate-300 rounded-md'
-                type="text" />
+                type="text" [(ngModel)]="password" />
             <div>
-                <button onClick={handleSubmit(onSubmit)}
-                    class='mt-[30px] w-[300px] h-[35px] bg-red-500'>Đăngnhập</button>
+                <button class='mt-[30px] w-[300px] h-[35px] bg-red-500'>Đăngnhập</button>
             </div>
         </div>
     </form>
