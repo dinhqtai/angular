@@ -14,4 +14,4 @@ import { FooterAdminComponent } from 'src/app/layout/footer-admin/footer-admin.c
   ],
   providers: []
 })
-export class AppModule { }
+export class IndexAdminModule { }

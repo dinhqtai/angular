@@ -14,4 +14,4 @@ import { FooterComponent } from 'src/app/layout/footer-user/footer.component';
   ],
   providers: []
 })
-export class AppModule { }
+export class IndexModule { }
