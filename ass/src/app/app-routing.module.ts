@@ -7,7 +7,9 @@ import { IndexComponent } from './pages/user/index/index.component';
 import { DetailsComponent } from './pages/user/details/details.component';
 import { UserComponent } from './layout/user/user.component';
 import { AdminComponent } from './layout/main/main.component';
-
+import { CartComponent } from './pages/user/cart/cart.component';
+import { UpdateComponent } from './pages/admin/update/update.component';
+import { AddComponent } from './pages/admin/add/add.component';
 const routes: Routes = [
   {
     path: "",
@@ -18,8 +20,12 @@ const routes: Routes = [
         component: IndexComponent
       },
       {
-        path: "details",
+        path: "details/:id",
         component: DetailsComponent
+      },
+      {
+        path: "cart/:id",
+        component: CartComponent
       },
     ]
   },
@@ -38,6 +44,14 @@ const routes: Routes = [
       {
         path: "admin",
         component: IndexComponentAdmin
+      },
+      {
+        path: "update/:id",
+        component: UpdateComponent
+      },
+      {
+        path: "add",
+        component: AddComponent
       },
     ]
   }
