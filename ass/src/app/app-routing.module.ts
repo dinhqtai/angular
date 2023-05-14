@@ -5,15 +5,23 @@ import { RegisterComponent } from './pages/register/register.component';
 import { IndexComponentAdmin } from './pages/admin/index/index.component';
 import { IndexComponent } from './pages/user/index/index.component';
 import { DetailsComponent } from './pages/user/details/details.component';
+import { UserComponent } from './layout/user/user.component';
+import { AdminComponent } from './layout/main/main.component';
 
 const routes: Routes = [
   {
     path: "",
-    component: IndexComponent,
-  },
-  {
-    path: "details",
-    component: DetailsComponent
+    component: UserComponent,
+    children: [
+      {
+        path: "",
+        component: IndexComponent
+      },
+      {
+        path: "details",
+        component: DetailsComponent
+      },
+    ]
   },
   {
     path: "login",
@@ -25,7 +33,13 @@ const routes: Routes = [
   },
   {
     path: "admin",
-    component: IndexComponentAdmin,
+    component: AdminComponent,
+    children: [
+      {
+        path: "admin",
+        component: IndexComponentAdmin
+      },
+    ]
   }
 ];
 
