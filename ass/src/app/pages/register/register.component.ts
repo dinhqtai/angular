@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
   signup = {
-    name
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+    resetPassword: ""
   }
-
+  SignUp() {
+    console.log(this.signup)
+  }
 }

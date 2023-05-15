@@ -9,13 +9,14 @@
             </p>
         </div>
 
-        <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+        <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4" (ngSubmit)="SignUp()">
             <div>
                 <label for="name" class="sr-only">Name</label>
 
                 <div class="relative">
-                    <input type="name" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                        placeholder="Enter Name" />
+                    <input [(ngModel)]="signup.name" [ngModelOptions]="{standalone: true}" type="name"
+                        class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter Name"
+                        required />
 
                     <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none"
@@ -29,8 +30,8 @@
                 <label for="sdt" class="sr-only">SĐT</label>
 
                 <div class="relative">
-                    <input type="sdt" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                        placeholder="Enter SĐT" />
+                    <input [(ngModel)]="signup.phone" [ngModelOptions]="{standalone: true}" type="sdt"
+                        class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter SĐT" />
 
                     <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none"
@@ -44,7 +45,8 @@
                 <label for="email" class="sr-only">Email</label>
 
                 <div class="relative">
-                    <input type="email" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    <input [(ngModel)]="signup.email" [ngModelOptions]="{standalone: true}" type="email"
+                        class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter Email" />
 
                     <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -61,7 +63,8 @@
                 <label for="password" class="sr-only">Password</label>
 
                 <div class="relative">
-                    <input type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    <input [(ngModel)]="signup.password" [ngModelOptions]="{standalone: true}" type="password"
+                        class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter Password" />
 
                     <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -79,7 +82,8 @@
                 <label for="password" class="sr-only"> Reset Password</label>
 
                 <div class="relative">
-                    <input type="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                    <input [(ngModel)]="signup.resetPassword" [ngModelOptions]="{standalone: true}" type="password"
+                        class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter Reset Password" />
 
                     <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
