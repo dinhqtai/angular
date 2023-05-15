@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class RegisterComponent {
   signup = {
     name: "",
-    phone: "",
+    phone: null,
     email: "",
     password: "",
     resetPassword: ""
