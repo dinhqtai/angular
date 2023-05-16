@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import axios from 'axios';
 @Component({
   selector: 'app-register',
@@ -10,7 +11,13 @@ export class RegisterComponent {
     email: "",
     password: "",
   }
+  constructor(private router: Router) { }
   submitForm() {
-    axios.post("http://localhost:8088/api/signup", this.Signup)
+    axios.post("http://localhost:8088/api/signup", this.Signup).then(response => {
+      this.router.navigate(["/login"])
+    })
+      .catch(error => {
+        console.log(error);
+      });
   }
 }

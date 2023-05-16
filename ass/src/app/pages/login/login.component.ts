@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import axios from 'axios';
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ export class LoginComponent {
     email: '',
     password: '',
   };
+  constructor(private router: Router) { }
   submitForm() {
-    axios.post("http://localhost:8088/api/signin", this.Signin)
+    axios.post("http://localhost:8088/api/signin", this.Signin).then(() => this.router.navigate(["/"])).catch(error => console.log(error));
   }
 }
