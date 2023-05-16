@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  credentials = {
-    username: '',
+  Signin = {
+    email: '',
     password: '',
   };
-  signin() {
-    console.log(this.credentials)
+  submitForm() {
+    console.log(this.Signin)
   }
 }

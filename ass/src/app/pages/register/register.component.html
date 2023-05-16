@@ -9,12 +9,12 @@
             </p>
         </div>
 
-        <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4" (ngSubmit)="SignUp()">
+        <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4" (ngSubmit)="submitForm()">
             <div>
                 <label for="name" class="sr-only">Name</label>
 
                 <div class="relative">
-                    <input [(ngModel)]="signup.name" [ngModelOptions]="{standalone: true}" type="name"
+                    <input [(ngModel)]="Signup.name" [ngModelOptions]="{standalone: true}" type="name"
                         class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter Name"
                         required />
 
@@ -30,7 +30,7 @@
                 <label for="sdt" class="sr-only">SĐT</label>
 
                 <div class="relative">
-                    <input [(ngModel)]="signup.phone" [ngModelOptions]="{standalone: true}" type="sdt"
+                    <input [(ngModel)]="Signup.phone" [ngModelOptions]="{standalone: true}" type="sdt"
                         class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm" placeholder="Enter SĐT" />
 
                     <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -45,7 +45,7 @@
                 <label for="email" class="sr-only">Email</label>
 
                 <div class="relative">
-                    <input [(ngModel)]="signup.email" [ngModelOptions]="{standalone: true}" type="email"
+                    <input [(ngModel)]="Signup.email" [ngModelOptions]="{standalone: true}" type="email"
                         class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter Email" />
 
@@ -63,7 +63,7 @@
                 <label for="password" class="sr-only">Password</label>
 
                 <div class="relative">
-                    <input [(ngModel)]="signup.password" [ngModelOptions]="{standalone: true}" type="password"
+                    <input [(ngModel)]="Signup.password" [ngModelOptions]="{standalone: true}" type="password"
                         class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter Password" />
 
@@ -82,7 +82,7 @@
                 <label for="password" class="sr-only"> Reset Password</label>
 
                 <div class="relative">
-                    <input [(ngModel)]="signup.resetPassword" [ngModelOptions]="{standalone: true}" type="password"
+                    <input [(ngModel)]="Signup.resetPassword" [ngModelOptions]="{standalone: true}" type="password"
                         class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                         placeholder="Enter Reset Password" />
 

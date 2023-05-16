@@ -5,14 +5,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  signup = {
+  Signup = {
     name: "",
     phone: null,
     email: "",
     password: "",
     resetPassword: ""
   }
-  SignUp() {
-    console.log(this.signup)
+  submitForm() {
+    console.log(this.Signup)
   }
 }
