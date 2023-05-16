@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import axios from 'axios';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -6,13 +7,10 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
   Signup = {
-    name: "",
-    phone: null,
     email: "",
     password: "",
-    resetPassword: ""
   }
   submitForm() {
-    console.log(this.Signup)
+    axios.post("http://localhost:8088/api/signup", this.Signup)
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,6 +11,6 @@ export class LoginComponent {
     password: '',
   };
   submitForm() {
-    console.log(this.Signin)
+    axios.post("http://localhost:8088/api/signin", this.Signin)
   }
 }
