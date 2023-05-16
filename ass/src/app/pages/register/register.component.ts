@@ -13,11 +13,6 @@ export class RegisterComponent {
   }
   constructor(private router: Router) { }
   submitForm() {
-    axios.post("http://localhost:8088/api/signup", this.Signup).then(response => {
-      this.router.navigate(["/login"])
-    })
-      .catch(error => {
-        console.log(error);
-      });
+    axios.post("http://localhost:8088/api/signup", this.Signup).then(() => this.router.navigate(["/login"])).catch(error => console.log(error));
   }
 }
