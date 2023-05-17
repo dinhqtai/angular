@@ -10,7 +10,8 @@ import { UserComponent } from './layout/user/user.component';
 import { CartComponent } from './pages/user/cart/cart.component';
 import { UpdateComponent } from './pages/admin/update/update.component';
 import { AddComponent } from './pages/admin/add/add.component';
-
+import { IndexComponent } from './pages/user/index/index.component';
+import { DetailsComponent } from './pages/user/details/details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,9 @@ import { AddComponent } from './pages/admin/add/add.component';
     UserComponent,
     CartComponent,
     UpdateComponent,
-    AddComponent
+    AddComponent,
+    IndexComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
