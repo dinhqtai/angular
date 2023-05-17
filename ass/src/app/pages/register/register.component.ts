@@ -8,6 +8,8 @@ import axios from 'axios';
 })
 export class RegisterComponent {
   Signup = {
+    name: "",
+    phone: "",
     email: "",
     password: "",
   }
