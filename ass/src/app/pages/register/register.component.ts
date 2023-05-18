@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import axios from 'axios';
+import { Signup } from 'src/app/commom/model';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  Signup = {
+  Signup: Signup = {
     name: "",
-    phone: "",
     email: "",
     password: "",
   }

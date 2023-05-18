@@ -12,6 +12,7 @@ import { UpdateComponent } from './pages/admin/update/update.component';
 import { AddComponent } from './pages/admin/add/add.component';
 import { IndexComponent } from './pages/user/index/index.component';
 import { DetailsComponent } from './pages/user/details/details.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { DetailsComponent } from './pages/user/details/details.component';
     UpdateComponent,
     AddComponent,
     IndexComponent,
-    DetailsComponent
+    DetailsComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

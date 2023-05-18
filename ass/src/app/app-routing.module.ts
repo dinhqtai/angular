@@ -10,6 +10,7 @@ import { AdminComponent } from './layout/main/main.component';
 import { CartComponent } from './pages/user/cart/cart.component';
 import { UpdateComponent } from './pages/admin/update/update.component';
 import { AddComponent } from './pages/admin/add/add.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 const routes: Routes = [
   {
     path: "",
@@ -17,7 +18,7 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        component: IndexComponent
+        component: IndexComponent,
       },
       {
         path: "details/:id",
@@ -27,6 +28,8 @@ const routes: Routes = [
         path: "cart/:id",
         component: CartComponent
       },
+      { path: 'notfound', component: NotfoundComponent },
+      { path: '**', redirectTo: '/notfound' },
     ]
   },
   {

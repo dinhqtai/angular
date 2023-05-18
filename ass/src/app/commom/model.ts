@@ -1,7 +1,6 @@
 import * as Yup from "yup"
 export const SignUp = Yup.object({
     name: Yup.string().required(),
-    phone: Yup.number().required(),
     email: Yup.string().email().required(),
     password: Yup.string().required(),
     resetPassword: Yup.string().oneOf([Yup.ref("password")])
