@@ -13,6 +13,7 @@ import { AddComponent } from './pages/admin/add/add.component';
 import { IndexComponent } from './pages/user/index/index.component';
 import { DetailsComponent } from './pages/user/details/details.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+
 import { ListComponent } from './pages/admin/list/list.component';
 
 @NgModule({
@@ -28,7 +29,9 @@ import { ListComponent } from './pages/admin/list/list.component';
     IndexComponent,
     DetailsComponent,
     NotfoundComponent,
+
     ListComponent,
+
 
   ],
   imports: [
