@@ -29,7 +29,6 @@ const routes: Routes = [
         component: CartComponent
       },
       { path: 'notfound', component: NotfoundComponent },
-      { path: '**', redirectTo: '/notfound' },
     ]
   },
   {
@@ -41,11 +40,11 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: "admin",
+    path: "admin/:id",
     component: AdminComponent,
     children: [
       {
-        path: "admin",
+        path: "admin/:id",
         component: IndexComponentAdmin
       },
       {
@@ -57,7 +56,8 @@ const routes: Routes = [
         component: AddComponent
       },
     ]
-  }
+  },
+  { path: '**', redirectTo: '/notfound' },
 ];
 
 @NgModule({
