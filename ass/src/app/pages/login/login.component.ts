@@ -13,6 +13,13 @@ export class LoginComponent {
   };
   constructor(private router: Router) { }
   submitForm() {
-    axios.post("http://localhost:8088/api/signin", this.Signin).then(() => this.router.navigate(["/"])).catch(error => console.log(error));
+    axios.post("http://localhost:8088/api/signin", this.Signin).then((data) => {
+      console.log(data.data.users.role);
+      if (data.data.users.role === "admin") {
+        this.router.navigate([`/admin/${data.data.users._id}`]);
+      } else {
+        this.router.navigate(["/"]);
+      }
+    })
   }
 }
