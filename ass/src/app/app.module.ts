@@ -14,6 +14,7 @@ import { IndexComponent } from './pages/user/index/index.component';
 import { DetailsComponent } from './pages/user/details/details.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { PeopleComponent } from './pages/admin/people/people.component';
+import { ListComponent } from './pages/admin/list/list.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +29,11 @@ import { PeopleComponent } from './pages/admin/people/people.component';
     IndexComponent,
     DetailsComponent,
     NotfoundComponent,
-PeopleComponent
+    PeopleComponent,
+    ListComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
