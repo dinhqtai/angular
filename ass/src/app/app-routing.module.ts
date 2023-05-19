@@ -11,7 +11,7 @@ import { CartComponent } from './pages/user/cart/cart.component';
 import { UpdateComponent } from './pages/admin/update/update.component';
 import { AddComponent } from './pages/admin/add/add.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
-import { UserPeople } from './pages/admin/userpeople/userpeople.component';
+import { PeopleComponent } from './pages/admin/people/people.component';
 const routes: Routes = [
   {
     path: "",
@@ -57,8 +57,8 @@ const routes: Routes = [
         component: AddComponent
       },
       {
-        path:"userpeople",
-        component:UserPeople
+        path:"people",
+        component:PeopleComponent
       }
     ]
   },
