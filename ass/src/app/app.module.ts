@@ -15,6 +15,7 @@ import { DetailsComponent } from './pages/user/details/details.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { PeopleComponent } from './pages/admin/people/people.component';
 import { ListComponent } from './pages/admin/list/list.component';
+import { AccessComponent } from './pages/access/access.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ListComponent } from './pages/admin/list/list.component';
     NotfoundComponent,
     PeopleComponent,
     ListComponent,
+    AccessComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

@@ -13,6 +13,7 @@ import { AddComponent } from './pages/admin/add/add.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { PeopleComponent } from './pages/admin/people/people.component';
 import { ListComponent } from './pages/admin/list/list.component';
+import { AccessComponent } from './pages/access/access.component';
 const routes: Routes = [
   {
     path: '',
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path:"access",
+    component:AccessComponent
   },
   {
     path: 'admin/:id',
