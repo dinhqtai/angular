@@ -1,16 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private data: any;
-
-  setData(data: any) {
-    this.data = data;
-  }
-
-  getData() {
-    return this.data;
-  }
+  dataUpdated: EventEmitter<string> = new EventEmitter<string>();
+  private getProducts = axios.get(``)
 }

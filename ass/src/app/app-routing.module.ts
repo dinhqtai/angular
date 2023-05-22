@@ -11,6 +11,7 @@ import { CartComponent } from './pages/user/cart/cart.component';
 import { UpdateComponent } from './pages/admin/update/update.component';
 import { AddComponent } from './pages/admin/add/add.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 const routes: Routes = [
   {
     path: "",
@@ -19,16 +20,16 @@ const routes: Routes = [
       {
         path: "",
         component: IndexComponent,
+        pathMatch: "full"
       },
       {
         path: "details/:id",
-        component: DetailsComponent
+        component: DetailsComponent,
       },
       {
         path: "cart/:id",
-        component: CartComponent
+        component: CartComponent,
       },
-      { path: 'notfound', component: NotfoundComponent },
     ]
   },
   {
@@ -40,11 +41,15 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path: "admin/login",
+    component: LoginAdminComponent
+  },
+  {
     path: "admin/:id",
     component: AdminComponent,
     children: [
       {
-        path: "admin/:id",
+        path: "",
         component: IndexComponentAdmin
       },
       {
@@ -55,9 +60,10 @@ const routes: Routes = [
         path: "add",
         component: AddComponent
       },
-    ]
+    ],
   },
   { path: '**', redirectTo: '/notfound' },
+  { path: 'notfound', component: NotfoundComponent },
 ];
 
 @NgModule({

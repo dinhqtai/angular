@@ -13,6 +13,7 @@ import { AddComponent } from './pages/admin/add/add.component';
 import { IndexComponent } from './pages/user/index/index.component';
 import { DetailsComponent } from './pages/user/details/details.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
     AddComponent,
     IndexComponent,
     DetailsComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LoginAdminComponent,
   ],
   imports: [
     BrowserModule,
