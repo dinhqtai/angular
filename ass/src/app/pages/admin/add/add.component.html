@@ -9,8 +9,7 @@
           <div>
             <label class="sr-only" for="name">Name</label>
             <input
-              [(ngModel)]="Product.name"
-              [ngModelOptions]="{ standalone: true }"
+              [(ngModel)]="Product.name" [ngModelOptions]="{standalone: true}"
               class="w-full rounded-lg border-gray-200 p-3 text-sm"
               placeholder="Name"
               type="text"
@@ -22,8 +21,7 @@
             <div>
               <label class="sr-only" for="price">Price</label>
               <input
-                [(ngModel)]="Product.price"
-                [ngModelOptions]="{ standalone: true }"
+                [(ngModel)]="Product.price" [ngModelOptions]="{standalone: true}"
                 class="w-full rounded-lg border-gray-200 p-3 text-sm"
                 placeholder="Price"
                 type="number"
@@ -35,12 +33,11 @@
             <label class="sr-only" for="message">Description</label>
 
             <textarea
+              [(ngModel)]="Product.desc" [ngModelOptions]="{standalone: true}"
               class="w-full rounded-lg border-gray-200 p-3 text-sm"
               placeholder="Description"
               rows="8"
               id="description"
-              [(ngModel)]="Product.description"
-              [ngModelOptions]="{ standalone: true }"
             ></textarea>
           </div>
 

@@ -9,9 +9,10 @@ import { Product, IProduct } from 'src/app/commom/model';
 })
 export class AddComponent {
   Product: IProduct = {
+    _id: '',
     name: '',
     price: 0,
-    description: '',
+    desc: '',
   };
   constructor(private router: Router) {}
   submitForm() {

@@ -29,7 +29,6 @@ const routes: Routes = [
         path: "cart/:id",
         component: CartComponent
       },
-      { path: 'notfound', component: NotfoundComponent },
     ]
   },
   {
@@ -45,7 +44,7 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       {
-        path: "admin/:id",
+        path: "",
         component: IndexComponentAdmin
       },
       {
@@ -62,6 +61,7 @@ const routes: Routes = [
       }
     ]
   },
+  { path: 'notfound', component: NotfoundComponent },
   { path: '**', redirectTo: '/notfound' },
 ];
 
