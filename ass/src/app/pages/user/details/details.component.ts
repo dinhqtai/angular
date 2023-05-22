@@ -13,7 +13,8 @@ export class DetailsComponent implements OnInit {
   ) { }
   getProducts: any = {
     name: "",
-    price: ""
+    price: "",
+    desc: ""
   }
   ngOnInit(): void {
     const idProducts = this.route.snapshot.paramMap.get('id');
@@ -24,7 +25,7 @@ export class DetailsComponent implements OnInit {
     if (!idProducts) {
       alert("Dang nhap de thuc hien thuc nang")
     } else {
-      axios.put(`http://localhost:8088/api/products/`,idProducts)
+      axios.put(`http://localhost:8088/api/products/`, idProducts)
     }
   }
 }

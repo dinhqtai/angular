@@ -126,7 +126,7 @@
           </div>
 
           <div>
-            <p class="text-xl font-bold">{{getProducts.price}}</p>
+            <p class="text-xl font-bold">${{getProducts.price}}</p>
           </div>
 
           <button type="submit" (click)="addCart()"
@@ -144,12 +144,7 @@
       <div class="lg:col-span-3">
         <div class="prose max-w-none">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam totam
-            eos iusto repellat blanditiis voluptate aspernatur, quae nemo
-            exercitationem cum debitis! Sint consectetur laborum tempora
-            repellat odit. Impedit quasi reprehenderit harum illum sequi
-            provident soluta cum quisquam odit possimus? Officia illum saepe
-            magnam nostrum, officiis placeat iure itaque cumque voluptate?
+            {{getProducts.desc}}
           </p>
         </div>
       </div>
