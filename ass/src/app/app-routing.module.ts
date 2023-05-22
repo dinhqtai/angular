@@ -12,6 +12,7 @@ import { UpdateComponent } from './pages/admin/update/update.component';
 import { AddComponent } from './pages/admin/add/add.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
+import { ListComponent } from './pages/admin/list/list.component';
 const routes: Routes = [
   {
     path: "",
@@ -60,7 +61,11 @@ const routes: Routes = [
         path: "add",
         component: AddComponent
       },
-    ],
+      {
+        path: "list",
+        component: ListComponent
+      },
+    ]
   },
   { path: '**', redirectTo: '/notfound' },
   { path: 'notfound', component: NotfoundComponent },
