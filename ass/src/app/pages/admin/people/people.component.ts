@@ -12,3 +12,4 @@ export class PeopleComponent implements OnInit {
     axios.get("http://localhost:8088/api/user").then((data)=>{this.getUser =data.data})
   }
 }
+
