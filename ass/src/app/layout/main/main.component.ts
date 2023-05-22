@@ -9,7 +9,8 @@ import axios from 'axios';
 })
 export class AdminComponent implements OnInit {
   getAdmin = {
-    name: ""
+    name: "",
+    email: ""
   }
   constructor(
     private router: ActivatedRoute

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { IndexComponentAdmin } from './pages/admin/index/index.component';
 import { IndexComponent } from './pages/user/index/index.component';
 import { DetailsComponent } from './pages/user/details/details.component';
 import { UserComponent } from './layout/user/user.component';
@@ -51,7 +50,7 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        component: IndexComponentAdmin
+        component: ListComponent
       },
       {
         path: "update/:id",
@@ -60,10 +59,6 @@ const routes: Routes = [
       {
         path: "add",
         component: AddComponent
-      },
-      {
-        path: "list",
-        component: ListComponent
       },
     ]
   },

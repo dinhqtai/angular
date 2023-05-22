@@ -5,51 +5,52 @@
 -->
 
 <div class="overflow-x-auto">
-    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-      <thead class="ltr:text-left rtl:text-right">
-        <tr>
-          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            id
-          </th>
-          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            Name
-          </th>
-          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            image
-          </th>
-          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            price
-          </th>
-          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            desc
-          </th>
-          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-            action
-          </th>
-  
-          <th class="px-4 py-2"></th>
-        </tr>
-      </thead>
-  
-      <tbody >
-          <tr *ngFor="let data of getProducts">
-            <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-              {{data._id}}
-            </td>
-            <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-              {{data.name}}
-            </td>
-            <td class="whitespace-nowrap px-4 py-2 text-gray-700 w-[150px] h-[150px]" ><img src="{{data.image}}" alt=""></td>
-            <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{data.price}}</td>
-            <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{data.desc}}</td>
-            
-            <td class="whitespace-nowrap px-4 py-2">
-              <a
-                class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700" (click)="btnDelete(data._id)">
-                xoa 
-              </a>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm" *ngIf="getProducts.length;else elseBlock">
+    <thead class="ltr:text-left rtl:text-right">
+      <tr>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          id
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          Name
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          image
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          price
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          desc
+        </th>
+        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          action
+        </th>
+
+        <th class="px-4 py-2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let data of getProducts">
+        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          {{data._id}}
+        </td>
+        <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+          {{data.name}}
+        </td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700 w-[150px] h-[150px]"><img src="{{data.image}}" alt=""></td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{data.price}}</td>
+        <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{data.desc}}</td>
+
+        <td class="whitespace-nowrap px-4 py-2">
+          <a class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700"
+            (click)="btnDelete(data._id)">
+            xoa
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #elseBlock>Không có sản phẩm nào</ng-template>
+</div>
