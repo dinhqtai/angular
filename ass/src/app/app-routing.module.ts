@@ -21,7 +21,6 @@ const routes: Routes = [
       {
         path: "",
         component: IndexComponent,
-        pathMatch: "full"
       },
       {
         path: "details/:id",
