@@ -26,6 +26,9 @@ export class UpdateComponent implements OnInit{
       )
     }
   submitForm() {
-   
+    axios
+    .put(`http://localhost:8088/api/products/${idProduct}`)
+    .then((data)=> this.Product = data.data
+    )
   }
 }

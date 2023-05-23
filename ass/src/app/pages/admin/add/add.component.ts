@@ -8,17 +8,19 @@ import { Product, IProduct } from 'src/app/commom/model';
   styleUrls: ['./add.component.scss'],
 })
 export class AddComponent {
-  Product: IProduct = {
-    _id: '',
+  Product = {  
     name: '',
     price: 0,
     desc: '',
   };
   constructor(private router: Router) {}
   submitForm() {
+    
     axios
       .post('http://localhost:8088/api/products', this.Product)
-      .then(() => this.router.navigate(['/list']))
-      .catch((error) => console.log(error));
+      .then(() =>console.log(this.Product)
+       )
+      // .catch((error) => console.log(error));
+      
   }
 }
