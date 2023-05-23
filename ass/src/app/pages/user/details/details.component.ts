@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
-import { ActivatedRoute } from '@angular/router';
-import { date } from 'yup';
+import { ActivatedRoute, Route } from '@angular/router';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -14,10 +13,19 @@ export class DetailsComponent implements OnInit {
   ) { }
   getProducts: any = {
     name: "",
-    price: ""
+    price: "",
+    desc: ""
   }
   ngOnInit(): void {
     const idProducts = this.route.snapshot.paramMap.get('id');
-    axios.get(`http://localhost:8088/api/products/${idProducts}`).then((data) => { this.getProducts = data.data; console.log(this.getProducts) });
+    axios.get(`http://localhost:8088/api/products/${idProducts}`).then((data) => this.getProducts = data.data);
+  }
+  addCart() {
+    const idProducts = this.route.snapshot.paramMap.get('id');
+    if (!idProducts) {
+      alert("Dang nhap de thuc hien thuc nang")
+    } else {
+      axios.put(`http://localhost:8088/api/products/`, idProducts)
+    }
   }
 }

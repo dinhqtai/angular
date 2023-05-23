@@ -13,9 +13,9 @@ import { AddComponent } from './pages/admin/add/add.component';
 import { IndexComponent } from './pages/user/index/index.component';
 import { DetailsComponent } from './pages/user/details/details.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
-
+import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { ListComponent } from './pages/admin/list/list.component';
-
+import { UserPeople } from './pages/admin/userpeople/userpeople.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +29,9 @@ import { ListComponent } from './pages/admin/list/list.component';
     IndexComponent,
     DetailsComponent,
     NotfoundComponent,
-
+    LoginAdminComponent,
     ListComponent,
-
-
+    UserPeople
   ],
   imports: [
     BrowserModule,
