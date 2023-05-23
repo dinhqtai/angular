@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/commom/model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import axios from 'axios';
 @Component({
@@ -8,27 +8,28 @@ import axios from 'axios';
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.scss'],
 })
-export class UpdateComponent implements OnInit{ 
-  Product: IProduct = {
-    _id:"",
+export class UpdateComponent implements OnInit {
+  Product = {
+    _id: "",
     name: "",
     price: 0,
     desc: ""
   }
+  idAdmin = ""
   constructor(
-    private route: ActivatedRoute
-    ) {}
-    ngOnInit(): void {
-      const idProduct = this.route.snapshot.paramMap.get('id')
-      axios
-      .get(`http://localhost:8088/api/products/${idProduct}`)
-      .then((data)=> this.Product = data.data
-      )
-    }
-  submitForm() {
+    private route: ActivatedRoute,
+    private link: Router
+  ) { }
+  ngOnInit(): void {
+    const idProduct = this.route.snapshot.paramMap.get('idProduct')
+    const idAdmin = this.route.snapshot.paramMap.get("id")
+    console.log(idAdmin);
     axios
-    .put(`http://localhost:8088/api/products/${idProduct}`)
-    .then((data)=> this.Product = data.data
-    )
+      .get(`http://localhost:8088/api/products/${idProduct}`)
+      .then((data) => this.Product = data.data
+      )
+  }
+  submitForm() {
+    axios.put(`http://localhost:8088/api/products/${this.Product._id}`, this.Product).then(() => { this.link.navigate([`admin/`]) })
   }
 }
