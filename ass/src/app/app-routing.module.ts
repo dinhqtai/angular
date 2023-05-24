@@ -53,7 +53,7 @@ const routes: Routes = [
         component: ListComponent
       },
       {
-        path: "update/:id",
+        path: "update/:idProduct",
         component: UpdateComponent
       },
       {
