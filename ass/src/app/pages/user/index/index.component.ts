@@ -10,6 +10,6 @@ import axios from 'axios';
 export class IndexComponent implements OnInit {
   getProducts: any[] = [];
   ngOnInit(): void {
-    axios.get("http://localhost:8088/api/products").then((data) => { this.getProducts = data.data })
+    axios.get("http://localhost:8088/api/products").then((data) => { this.getProducts = data.data });
   }
 }

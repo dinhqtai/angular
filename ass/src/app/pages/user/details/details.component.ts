@@ -14,7 +14,8 @@ export class DetailsComponent implements OnInit {
   getProducts: any = {
     name: "",
     price: "",
-    desc: ""
+    desc: "",
+    images: ""
   }
   ngOnInit(): void {
     const idProducts = this.route.snapshot.paramMap.get('id');

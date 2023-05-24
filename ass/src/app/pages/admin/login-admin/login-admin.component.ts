@@ -14,6 +14,7 @@ export class LoginAdminComponent {
   };
   constructor(private router: Router) { }
   loginAdmin() {
-    axios.post("http://localhost:8088/api/admin/signin", this.Admin).then((data) => { this.router.navigate([`admin/${data.data.admins._id}`]) });
+    axios.post("http://localhost:8088/api/admin/signin", this.Admin).then((data) => localStorage.setItem("admins", JSON.stringify(data.data.admins)));
+    this.router.navigate(["admin"])
   }
 }

@@ -45,7 +45,7 @@ const routes: Routes = [
     component: LoginAdminComponent
   },
   {
-    path: "admin/:id",
+    path: "admin",
     component: AdminComponent,
     children: [
       {

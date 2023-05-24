@@ -10,18 +10,14 @@ import axios from 'axios';
 })
 export class ListComponent implements OnInit {
   getProducts: any[] = [];
+  getId = {
+    _id: ""
+  }
   constructor(
-    private router: ActivatedRoute,
-    private link: Router
+    private router: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    const adminId = this.router.snapshot.paramMap.get("id");
-    axios.get(`http://localhost:8088/api/admin/${adminId}`).catch((data) => {
-      if (data) {
-        this.link.navigate(['/admin/login'])
-      }
-    })
     axios.get("http://localhost:8088/api/products").then((data) => this.getProducts = data.data)
   }
   btnDelete(id: string): void {

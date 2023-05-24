@@ -16,6 +16,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { ListComponent } from './pages/admin/list/list.component';
 import { UserPeople } from './pages/admin/userpeople/userpeople.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +32,13 @@ import { UserPeople } from './pages/admin/userpeople/userpeople.component';
     NotfoundComponent,
     LoginAdminComponent,
     ListComponent,
-    UserPeople
+    UserPeople,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
