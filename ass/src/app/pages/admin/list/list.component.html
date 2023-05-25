@@ -50,7 +50,7 @@
           </div>
           <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
               <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                  <table class="min-w-full leading-normal">
+                  <table class="min-w-full leading-normal" *ngIf="getProducts.length;else elseBlock">
                       <thead>
                           <tr>
                               <th
@@ -109,17 +109,27 @@
                                       class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                       <span aria-hidden
                                           class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                      <span class="relative"><a href="" (click)="btnDelete(data._id)">Delete</a></span>
+                                      <span class="relative"><a  (click)="btnDelete(data._id)">Delete</a></span>
 
                                   </span>
+                                  <span
+                                  class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                  <span aria-hidden
+                                      class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                  <span class="relative"><a href="/admin/add">Add</a></span>
+
+                              </span>
                               </td>
+                              
                           </tr>
                                          
                       </tbody>
+                      
                   </table>
                   <ng-template #elseBlock>Không có sản phẩm nào</ng-template>
                   <div
                       class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
+                     
                       <span class="text-xs xs:text-sm text-gray-900">
                           Showing 1 to 4 of 50 Entries
                       </span>
@@ -134,8 +144,11 @@
                           </button>
                       </div>
                   </div>
+               
               </div>
+              
           </div>
+          
       </div>
   </div>
 </body>
