@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-
+interface Product {
+  _id: string;
+  name: string;
+  price: string;
+  images: string;
+}
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  getProducts = {
-    _id: "",
-    price: "",
-    name: "",
-    images: ""
-  }
+  getProducts: Product[] = []
 
   ngOnInit(): void {
-    var products = localStorage.getItem("products");
-    if (products !== null) {
-      this.getProducts = JSON.parse(products)
-    }
+    this.getProducts = JSON.parse(localStorage.getItem("products") || "[]")
   }
   thanhToan() {
-    localStorage.removeItem("products")
-    window.location.reload()
+    if (this.getProducts.length) {
+      localStorage.removeItem("products")
+      window.location.reload()
+      alert("Thanh toán thành công")
+    }
   }
 }
