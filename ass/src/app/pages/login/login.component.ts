@@ -7,7 +7,7 @@ import axios from 'axios';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   Signin = {
     email: '',
     password: '',
@@ -16,8 +16,13 @@ export class LoginComponent {
     private router: Router,
   ) { }
   submitForm() {
-    axios.post("http://localhost:8088/api/signin", this.Signin).then((data) => localStorage.setItem("user", JSON.stringify(data.data.users)));
-    this.router.navigate(["/"])
+    axios.post("http://localhost:8088/api/signin", this.Signin)
+      .then((data) => {
+        localStorage.setItem("user", JSON.stringify(data.data.users));
+        this.router.navigate(["/"]);
+      });
   }
-
+  ngOnInit(): void {
+    localStorage.removeItem("user")
+  }
 }

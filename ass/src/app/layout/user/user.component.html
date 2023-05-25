@@ -51,8 +51,13 @@
       <a class="text-gray-900" href="">Projects</a>
       <a class="text-gray-900" href="">Contact</a>
     </nav>
-
+    <a routerLink="cart" class="block text-sm font-medium text-gray-900 mr-[50px] ">
+      Giỏ hàng
+    </a>
     <div class="hidden items-center gap-4 lg:flex" *ngIf="getUser.name.length;else elseBlock">
+      <label class="block text-sm font-medium text-gray-900 mr-[50px] ">
+        Lịch sử
+      </label>
       <label class="block text-2xl font-medium text-gray-900 mr-[50px] ">
         {{getUser.name}}
       </label>

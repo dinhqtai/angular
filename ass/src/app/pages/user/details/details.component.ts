@@ -12,21 +12,24 @@ export class DetailsComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
   getProducts: any = {
+    _id: "",
     name: "",
     price: "",
     desc: "",
     images: ""
   }
+  setCart = []
+  itemCart = []
   ngOnInit(): void {
     const idProducts = this.route.snapshot.paramMap.get('id');
     axios.get(`http://localhost:8088/api/products/${idProducts}`).then((data) => this.getProducts = data.data);
+
   }
   addCart() {
-    const idProducts = this.route.snapshot.paramMap.get('id');
-    if (!idProducts) {
-      alert("Dang nhap de thuc hien thuc nang")
-    } else {
-      axios.put(`http://localhost:8088/api/products/`, idProducts)
+    localStorage.setItem("products", JSON.stringify(this.getProducts))
+    var products = localStorage.getItem("products")
+    if (products !== null) {
+      this.itemCart = JSON.parse(products)
     }
   }
-}
+} 

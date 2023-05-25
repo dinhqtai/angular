@@ -26,6 +26,7 @@ export class UserComponent implements OnInit {
     if (user !== null) {
       this.getId = JSON.parse(user);
       axios.get(`http://localhost:8088/api/user/${this.getId._id}`).then((data) => this.getUser = data.data)
+      console.log(this.getUser.name)
 
     }
   }
@@ -33,4 +34,5 @@ export class UserComponent implements OnInit {
     localStorage.removeItem("user")
     window.location.reload()
   }
+
 }
