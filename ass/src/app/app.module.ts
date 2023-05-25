@@ -17,6 +17,7 @@ import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.compo
 import { ListComponent } from './pages/admin/list/list.component';
 import { UserPeople } from './pages/admin/userpeople/userpeople.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HistoryUserComponent } from './pages/user/history-user/history-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginAdminComponent,
     ListComponent,
     UserPeople,
+    HistoryUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { ListComponent } from './pages/admin/list/list.component';
 import { UserPeople } from './pages/admin/userpeople/userpeople.component';
+import { HistoryUserComponent } from './pages/user/history-user/history-user.component';
 const routes: Routes = [
   {
     path: "",
@@ -29,6 +30,10 @@ const routes: Routes = [
       {
         path: "cart",
         component: CartComponent,
+      },
+      {
+        path: "history",
+        component: HistoryUserComponent,
       },
     ]
   },

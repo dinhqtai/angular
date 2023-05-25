@@ -9,7 +9,7 @@
         </svg>
     </button>
 
-    <div class="mt-4 space-y-6 text-center">
+    <div class="mt-4 space-y-6 text-center" *ngIf="getProducts.length;else elseBlock">
         <ul class="space-y-4" *ngFor="let data of getProducts">
             <li class=" flex items-center gap-4">
                 <img src="{{data.images}}" alt="" class="h-16 w-16 rounded object-cover" />
@@ -38,19 +38,17 @@
                 </div>
             </li>
         </ul>
-        <ng-template #elseBlock>Giỏ hàng trống</ng-template>
-
         <div class="space-y-4 mt-[50px]">
             <button type="submit"
                 class="mx-auto block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
                 (click)="thanhToan()">
                 Thanh toán
             </button>
-
             <a routerLink="/"
                 class="inline-block text-sm text-gray-500 underline underline-offset-4 transition hover:text-gray-600">
                 Continue shopping
             </a>
         </div>
     </div>
+    <ng-template #elseBlock>Giỏ hàng trống</ng-template>
 </div>
