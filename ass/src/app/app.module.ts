@@ -18,6 +18,8 @@ import { ListComponent } from './pages/admin/list/list.component';
 import { UserPeople } from './pages/admin/userpeople/userpeople.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './pages/user/products/products.component';
+import { ContactComponent } from './pages/user/contact/contact.component';
+import { BlogComponent } from './pages/user/blog/blog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import { ProductsComponent } from './pages/user/products/products.component';
     LoginAdminComponent,
     ListComponent,
     UserPeople,
-    ProductsComponent
+    ProductsComponent,
+    ContactComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

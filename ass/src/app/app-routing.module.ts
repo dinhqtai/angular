@@ -14,6 +14,8 @@ import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.compo
 import { ListComponent } from './pages/admin/list/list.component';
 import { UserPeople } from './pages/admin/userpeople/userpeople.component';
 import { ProductsComponent } from './pages/user/products/products.component';
+import { ContactComponent } from './pages/user/contact/contact.component';
+import { BlogComponent } from './pages/user/blog/blog.component';
 const routes: Routes = [
   {
     path: "",
@@ -34,6 +36,14 @@ const routes: Routes = [
       {
         path: "products",
         component: ProductsComponent,
+      },
+      {
+        path: "contact",
+        component: ContactComponent,
+      },
+      {
+        path: "blog",
+        component: BlogComponent,
       },
     ]
   },
