@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
+interface Product {
+  _id: string;
+  name: string;
+  price: string;
+  desc: string;
+  images: string;
+}
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -8,24 +17,29 @@ import { ActivatedRoute, Route } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(
-    private route: ActivatedRoute,
-  ) { }
-  getProducts: any = {
+  getProducts: Product = {
+    _id: "",
     name: "",
     price: "",
-    desc: ""
-  }
+    desc: "",
+    images: ""
+  };
+  setCart: Product[] = [];
+  itemCart: Product[] = [];
+
+  constructor(private route: ActivatedRoute) { }
+
   ngOnInit(): void {
     const idProducts = this.route.snapshot.paramMap.get('id');
-    axios.get(`http://localhost:8088/api/products/${idProducts}`).then((data) => this.getProducts = data.data);
+    axios.get<Product>(`http://localhost:8088/api/products/${idProducts}`)
+      .then((response) => {
+        this.getProducts = response.data;
+      });
   }
-  addCart() {
-    const idProducts = this.route.snapshot.paramMap.get('id');
-    if (!idProducts) {
-      alert("Dang nhap de thuc hien thuc nang")
-    } else {
-      axios.put(`http://localhost:8088/api/products/`, idProducts)
-    }
+
+  addCart(): void {
+    this.itemCart = JSON.parse(localStorage.getItem("products") || "[]");
+    this.itemCart.push(this.getProducts);
+    localStorage.setItem("products", JSON.stringify(this.itemCart));
   }
 }

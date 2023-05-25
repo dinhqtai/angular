@@ -13,6 +13,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { ListComponent } from './pages/admin/list/list.component';
 import { UserPeople } from './pages/admin/userpeople/userpeople.component';
+import { ProductsComponent } from './pages/user/products/products.component';
 const routes: Routes = [
   {
     path: "",
@@ -27,8 +28,12 @@ const routes: Routes = [
         component: DetailsComponent,
       },
       {
-        path: "cart/:id",
+        path: "cart",
         component: CartComponent,
+      },
+      {
+        path: "products",
+        component: ProductsComponent,
       },
     ]
   },
@@ -45,7 +50,7 @@ const routes: Routes = [
     component: LoginAdminComponent
   },
   {
-    path: "admin/:id",
+    path: "admin",
     component: AdminComponent,
     children: [
       {
