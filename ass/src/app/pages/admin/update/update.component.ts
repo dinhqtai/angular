@@ -11,6 +11,7 @@ import axios from 'axios';
 export class UpdateComponent implements OnInit {
   Product = {
     _id: "",
+    images:'',
     name: "",
     price: 0,
     desc: ""
