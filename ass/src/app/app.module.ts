@@ -18,6 +18,9 @@ import { ListComponent } from './pages/admin/list/list.component';
 import { UserPeople } from './pages/admin/userpeople/userpeople.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HistoryUserComponent } from './pages/user/history-user/history-user.component';
+import { BlogComponent } from './pages/user/blog/blog.component';
+import { ContactComponent } from './pages/user/contact/contact.component';
+import { ProductsComponent } from './pages/user/products/products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,9 @@ import { HistoryUserComponent } from './pages/user/history-user/history-user.com
     ListComponent,
     UserPeople,
     HistoryUserComponent,
+    BlogComponent,
+    ContactComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
