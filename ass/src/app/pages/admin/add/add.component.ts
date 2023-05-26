@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AddComponent implements OnInit {
   Product = {
     name: '',
+    images:'',
     price: 0,
     desc: '',
   };
@@ -25,6 +26,6 @@ export class AddComponent implements OnInit {
   }
   submitForm() {
     axios
-      .post('http://localhost:8088/api/products', this.Product).then(() => this.link.navigate)
+      .post('http://localhost:8088/api/products', this.Product).then(() => this.link.navigate([`admin/`]))
   }
 }
