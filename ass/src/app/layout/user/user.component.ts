@@ -31,7 +31,7 @@ export class UserComponent implements OnInit {
     }
   }
   dangXuat() {
-    localStorage.removeItem("user")
+    localStorage.clear()
     window.location.reload()
   }
 

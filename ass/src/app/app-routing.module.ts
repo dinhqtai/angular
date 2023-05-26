@@ -13,9 +13,10 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { ListComponent } from './pages/admin/list/list.component';
 import { UserPeople } from './pages/admin/userpeople/userpeople.component';
-import { ProductsComponent } from './pages/user/products/products.component';
-import { ContactComponent } from './pages/user/contact/contact.component';
+import { HistoryUserComponent } from './pages/user/history-user/history-user.component';
 import { BlogComponent } from './pages/user/blog/blog.component';
+import { ContactComponent } from './pages/user/contact/contact.component';
+import { ProductsComponent } from './pages/user/products/products.component';
 const routes: Routes = [
   {
     path: "",
@@ -34,16 +35,20 @@ const routes: Routes = [
         component: CartComponent,
       },
       {
-        path: "products",
-        component: ProductsComponent,
+        path: "history",
+        component: HistoryUserComponent,
+      },
+      {
+        path: "blog",
+        component: BlogComponent,
       },
       {
         path: "contact",
         component: ContactComponent,
       },
       {
-        path: "blog",
-        component: BlogComponent,
+        path: "products",
+        component: ProductsComponent,
       },
     ]
   },

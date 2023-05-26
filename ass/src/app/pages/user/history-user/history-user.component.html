@@ -1,0 +1,39 @@
+<!--
+  Heads up! 👋
+
+  This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
+-->
+
+<div class="overflow-x-auto text-center" *ngIf="getHistory.length;else elseBlock">
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+        <thead class="ltr:text-left rtl:text-right">
+            <tr>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Name
+                </th>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Images
+                </th>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Price
+                </th>
+                <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    Trạng thái
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="divide-y divide-gray-200">
+            <tr *ngFor="let data of getHistory">
+                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                    {{data.name}}
+                </td>
+                <td class="whitespace-nowrap px-4 py-2 text-gray-700"><img class="w-[100px]" src="{{data.images}}"
+                        alt=""></td>
+                <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{data.price}}</td>
+                <td class="whitespace-nowrap px-4 py-2 text-gray-700">Đã thanh toán</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #elseBlock>Không có đơn hàng nào</ng-template>
