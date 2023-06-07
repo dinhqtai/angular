@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from 'autoprefixer';
 import axios from 'axios';
+import { number } from 'yup';
 interface Cart {
   _id: string;
   name: string;
@@ -22,6 +23,12 @@ interface History {
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  putProducts = {
+    soLuong: 0 as number
+  }
+  getSoLuong = {
+    soLuong: 0 as number
+  }
   getTongPrice: number = 0
   tongAll: number = 0
   getProducts: Cart[] = []
@@ -40,6 +47,23 @@ export class CartComponent implements OnInit {
       })
       this.tongAll = this.getTongPrice + this.tongAll
     })
+  }
+  xoa(id: string) {
+    this.getProducts = JSON.parse(localStorage.getItem("cart") || "[]")
+    const isConfirm = confirm("Bạn có chắc muốn xóa sản phẩm khỏi giỏ hàng không ?");
+    if (isConfirm) {
+      const getIdProducts = this.getProducts.filter(data => data._id != id)
+      const idPutProducts = this.getProducts.filter(data => data._id === id)
+      idPutProducts.map((dataCu) => {
+        axios.get(`http://localhost:8088/api/products/${id}`).then((data) => {
+          this.getSoLuong = data.data;
+          this.putProducts.soLuong = dataCu.soLuong + this.getSoLuong.soLuong
+          axios.put(`http://localhost:8088/api/products/${id}`, this.putProducts)
+        })
+      })
+      localStorage.setItem('cart', JSON.stringify(getIdProducts));
+    }
+    // window.location.reload()
   }
   thanhToan() {
     this.getIdUser = JSON.parse(localStorage.getItem("user") || "[]")
