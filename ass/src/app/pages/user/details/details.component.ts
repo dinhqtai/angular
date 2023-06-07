@@ -105,7 +105,7 @@ export class DetailsComponent implements OnInit {
                 axios.put<discountCode>(`http://localhost:8088/api/discount/${data._id}`, this.putDiscountCode)
                 alert("Thêm sản phẩm vào giỏ hàng với mã ưu đãi thành công")
               } else {
-                alert(`Mã ưu đãi không tồn tại !`);
+                alert(`Mã ưu đãi không khả dụng !`);
               }
 
             })
