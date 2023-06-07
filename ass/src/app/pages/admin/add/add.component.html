@@ -18,12 +18,18 @@
           </div>
           <div>
             <label class="sr-only" for="images">Images</label>
+            <img 
+              [src]="imageSrc" 
+              (load)="handleImageLoad()" 
+              [class.loaded]="imageLoaded" 
+            />
             <input
-              [(ngModel)]="Product.images" [ngModelOptions]="{standalone: true}"
               class="w-full rounded-lg border-gray-200 p-3 text-sm"
               placeholder="Name"
               type="file"
               id="name"
+              accept="image/*"
+              (change)="handleInputChange($event)"
             />
           </div>
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
