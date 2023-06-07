@@ -12,6 +12,7 @@ export class UpdateComponent implements OnInit {
   Product = {
     _id: "",
     images: '',
+    soLuong: 0,
     name: "",
     price: 0,
     desc: ""

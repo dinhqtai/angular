@@ -72,8 +72,8 @@ export class DetailsComponent implements OnInit {
     if (this.getProducts.soLuong - this.getSoLuong >= 0 && this.getSoLuong > 0) {
       if (this.getdiscountCode.length) {
         axios.get(`http://localhost:8088/api/discount`).then((data) => {
-          this.getAllDiscountCode = data.data,
-            this.getIdDiscountCode = this.getAllDiscountCode.filter(data => data.discountCode === this.getdiscountCode)
+          this.getAllDiscountCode = data.data.DiscountCode;
+          this.getIdDiscountCode = this.getAllDiscountCode.filter(data => data.discountCode === this.getdiscountCode)
           if (this.getIdDiscountCode.length) {
             this.getIdDiscountCode.map((data) => {
               this.getProducts.soLuong = this.getProducts.soLuong - this.getSoLuong
@@ -111,9 +111,6 @@ export class DetailsComponent implements OnInit {
             })
           } else {
             alert(`Mã ưu đãi không tồn tại !`);
-            setTimeout(() => {
-              window.location.reload();
-            }, 500);
           }
         })
       }

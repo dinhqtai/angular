@@ -19,8 +19,16 @@
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
               <label class="sr-only" for="price">Price</label>
-              <input [(ngModel)]="Product.price" [ngModelOptions]="{standalone: true}" [value]="Product.price"
+              <input min="0" [(ngModel)]="Product.price" [ngModelOptions]="{standalone: true}" [value]="Product.price"
                 class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Price" type="number" id="price" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label class="sr-only" for="price">Price</label>
+              <input [(ngModel)]="Product.soLuong" [ngModelOptions]="{standalone: true}" [value]="Product.soLuong"
+                class="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Price" type="number" min="0"
+                id="price" />
             </div>
           </div>
           <div>
