@@ -9,7 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AddComponent implements OnInit {
   Product = {
     name: '',
-    images:'',
+    soLuong: 0,
+    images: '',
     price: 0,
     desc: '',
   };
@@ -48,22 +49,22 @@ export class AddComponent implements OnInit {
     var reader = new FileReader();
 
     if (!file.type.match(pattern)) {
-        alert('invalid format');
-        return;
+      alert('invalid format');
+      return;
     }
 
     this.loaded = false;
 
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
-}
+  }
 
-_handleReaderLoaded(e: any) {
-     console.log("_handleReaderLoaded")
+  _handleReaderLoaded(e: any) {
+    console.log("_handleReaderLoaded")
     var reader = e.target;
     this.imageSrc = reader.result;
     this.Product.images = reader.result;
     this.loaded = true;
-}
+  }
 
 }
