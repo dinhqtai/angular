@@ -5,52 +5,92 @@
         Thêm sản phẩm
       </h1>
       <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-        <form action="" class="space-y-4" (ngSubmit)="submitForm()">
+        <form
+          action=""
+          class="space-y-4"
+          (ngSubmit)="submitForm()"
+          [formGroup]="inforProduct"
+        >
           <div>
-            <label class="sr-only" for="name">Name</label>
+            <label class="" for="name">Name</label>
             <input
-              [(ngModel)]="Product.name" [ngModelOptions]="{standalone: true}"
-              class="w-full rounded-lg border-gray-200 p-3 text-sm"
-              placeholder="Name"
+              [(ngModel)]="Product.name"
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pl-[10px]"
               type="text"
               id="name"
+              formControlName="name"
             />
+            <div class="" *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)">
+              <div class="" *ngIf="f.name.errors">
+                <div >
+                  <small id="nameHelp" class="from-text text-muted err"
+                    >Name không được để rỗng</small
+                  >
+                </div>
+              </div>
+            </div>
           </div>
           <div>
-            <label class="sr-only" for="images">Images</label>
-            <img 
-              [src]="imageSrc" 
-              (load)="handleImageLoad()" 
-              [class.loaded]="imageLoaded" 
-            />
+            <label class="" for="images">Images</label>
+            <img/>
             <input
               class="w-full rounded-lg border-gray-200 p-3 text-sm"
               placeholder="Name"
               type="file"
               id="name"
               accept="image/*"
-              (change)="handleInputChange($event)"
             />
           </div>
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>
-              <label class="sr-only" for="price">Price</label>
+              <label class="" for="price">Price</label>
               <input
-                [(ngModel)]="Product.price" [ngModelOptions]="{standalone: true}"
-                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                [(ngModel)]="Product.price"
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pl-[10px]"
                 placeholder="Price"
                 type="number"
                 id="price"
+                min="0"
+                formControlName="price"
               />
+              <div class="" *ngIf="f.price.invalid && (f.price.dirty || f.price.touched)">
+                <div class="" *ngIf="f.price.errors">
+                  <div >
+                    <small id="priceHelp" class="from-text text-muted err"
+                      >Price không được bỏ trống</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="" for="quantity">Quantity</label>
+              <input
+                [(ngModel)]="Product.soLuong"
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pl-[10px]"
+                placeholder="Quantity"
+                type="number"
+                id="quantity"
+                min="1"
+                formControlName="soLuong"
+              />
+              <div class="" *ngIf="f.soLuong.invalid && (f.soLuong.dirty || f.soLuong.touched)">
+                <div class="" *ngIf="f.soLuong.errors">
+                  <div >
+                    <small id="quantityHelp" class="from-text text-muted err"
+                      >Quantity không được bỏ trống</small
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div>
-            <label class="sr-only" for="message">Description</label>
-
+            <label class="" for="message">Description</label>
             <textarea
-              [(ngModel)]="Product.desc" [ngModelOptions]="{standalone: true}"
-              class="w-full rounded-lg border-gray-200 p-3 text-sm"
-              placeholder="Description"
+              [(ngModel)]="Product.desc"
+              [ngModelOptions]="{ standalone: true }"
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 pl-[10px]"
               rows="8"
               id="description"
             ></textarea>
@@ -60,7 +100,8 @@
             <button
               type="submit"
               class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-            >
+              [disabled]="!inforProduct.valid"
+              >
               Thêm sản phẩm
             </button>
           </div>
