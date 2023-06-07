@@ -28,6 +28,7 @@ export class ListComponent implements OnInit {
     if (isConfirm) {
       this.getProducts = this.getProducts.filter(product => product._id != id);
       axios.delete(`http://localhost:8088/api/products/` + id).then(() => alert("Bạn xóa thành công"));
+      
     }
   }
 }
