@@ -22,7 +22,7 @@
                     <form>
                         <label for="Line1Qty" class="sr-only"> Quantity </label>
 
-                        <input type="number" min="1" value="1" id="Line1Qty"
+                        <input disabled type="number" min="1" value="{{data.soLuong}}" id="Line1Qty"
                             class="h-8 w-12 rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none" />
                     </form>
 
@@ -36,8 +36,12 @@
                         </svg>
                     </button>
                 </div>
+                <div>
+                    <h3 class="text-sm text-gray-900">{{data.price*data.soLuong}}</h3>
+                </div>
             </li>
         </ul>
+        <div>Tổng tiền : {{tongAll}}</div>
         <div class="space-y-4 mt-[50px]">
             <button type="submit"
                 class="mx-auto block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
