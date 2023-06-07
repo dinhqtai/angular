@@ -10,6 +10,7 @@ import axios from 'axios';
 })
 export class ListComponent implements OnInit {
   getProducts: any[] = [];
+  searchPro: string = ""
   getId = {
     _id: ""
   }
@@ -23,6 +24,18 @@ export class ListComponent implements OnInit {
       console.log(this.getProducts)
     })
   }
+  search() {
+    if (this.searchPro !== '') {
+      this.getProducts = this.getProducts.filter((data) =>
+      data.name.toLowerCase().includes(this.searchPro.toLowerCase())
+    ) 
+      // Tải lại trang
+      setTimeout(function() {
+        location.reload();
+      }, 3000);
+    }
+  }
+
   btnDelete(id: string): void {
     const isConfirm = confirm("ban co chắc xóa sản phẩm này không");
     if (isConfirm) {
