@@ -92,6 +92,7 @@ const routes: Routes = [
         path: "people",
         component: UserPeople
       },
+      {
         path: "outStock",
         component: OutStockComponent
       },
