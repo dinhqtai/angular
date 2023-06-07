@@ -62,6 +62,7 @@ export class CartComponent implements OnInit {
         })
       })
       localStorage.setItem('cart', JSON.stringify(getIdProducts));
+      alert("Xóa thành công")
     }
     // window.location.reload()
   }
