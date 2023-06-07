@@ -5,8 +5,9 @@ import axios from 'axios';
 interface Product {
   _id: string;
   name: string;
-  price: string;
+  price: number;
   images: string;
+  soLuong: number
 }
 @Component({
   selector: 'app-history-user',
@@ -24,7 +25,9 @@ export class HistoryUserComponent implements OnInit {
   ngOnInit(): void {
     this.getIdUser = JSON.parse(localStorage.getItem("user") || "[]")
     if (this.getIdUser._id) {
-      axios.get(`http://localhost:8088/api/user/${this.getIdUser._id}`).then((data) => { this.getHistory = data.data.history })
+      axios.get(`http://localhost:8088/api/user/${this.getIdUser._id}`).then((data) => {
+        this.getHistory = data.data.history;
+      })
     } else {
       this.router.navigate(['/login'])
     }

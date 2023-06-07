@@ -15,7 +15,6 @@ interface History {
   price: number;
   images: string;
   soLuong: string;
-  status: string
 }
 @Component({
   selector: 'app-cart',
@@ -72,7 +71,7 @@ export class CartComponent implements OnInit {
       axios.get(`http://localhost:8088/api/user/${this.getIdUser._id}`).then((data) => {
         this.getIdUser.history = data.data.history;
         this.setUser.history = this.getProducts.concat(this.getIdUser.history);
-        axios.put(`http://localhost:8088/api/user/${this.getIdUser._id}`, this.setUser).then(() => {
+        axios.put(`http://localhost:8088/api/user/${this.getIdUser._id}`, this.setUser).then((data) => {
           localStorage.removeItem("cart");
           this.getProducts = JSON.parse(localStorage.getItem("cart") || "[]")
           alert("Thanh toán thành công")
