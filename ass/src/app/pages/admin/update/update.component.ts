@@ -11,7 +11,7 @@ import axios from 'axios';
 export class UpdateComponent implements OnInit {
   Product = {
     _id: "",
-    images:'',
+    images: '',
     name: "",
     price: 0,
     desc: ""
@@ -23,14 +23,12 @@ export class UpdateComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     const idProduct = this.route.snapshot.paramMap.get('idProduct')
-    const idAdmin = this.route.snapshot.paramMap.get("id")
-    console.log(idAdmin);
     axios
       .get(`http://localhost:8088/api/products/${idProduct}`)
       .then((data) => this.Product = data.data
       )
   }
   submitForm() {
-    axios.put(`http://localhost:8088/api/products/${this.Product._id}`, this.Product).then(() => { this.link.navigate([`admin/`]) })
+    axios.put(`http://localhost:8088/api/products/${this.Product._id}`, this.Product).then(() => { this.link.navigate([`admin`]) })
   }
 }

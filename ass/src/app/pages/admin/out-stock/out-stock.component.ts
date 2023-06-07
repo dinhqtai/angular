@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { data } from 'autoprefixer';
 import axios from 'axios';
-
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-out-stock',
+  templateUrl: './out-stock.component.html',
+  styleUrls: ['./out-stock.component.scss']
 })
-export class ListComponent implements OnInit {
+export class OutStockComponent implements OnInit {
   getProducts: any[] = [];
   getId = {
     _id: ""
@@ -20,7 +19,6 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     axios.get("http://localhost:8088/api/products").then((data) => {
       this.getProducts = data.data;
-      console.log(this.getProducts)
     })
   }
   btnDelete(id: string): void {

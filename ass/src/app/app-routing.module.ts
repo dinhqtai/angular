@@ -17,6 +17,10 @@ import { HistoryUserComponent } from './pages/user/history-user/history-user.com
 import { BlogComponent } from './pages/user/blog/blog.component';
 import { ContactComponent } from './pages/user/contact/contact.component';
 import { ProductsComponent } from './pages/user/products/products.component';
+import { OutStockComponent } from './pages/admin/out-stock/out-stock.component';
+import { DiscountComponent } from './pages/admin/discount/discount.component';
+import { PostDiscountComponent } from './pages/admin/post-discount/post-discount.component';
+import { UpdateDiscountComponent } from './pages/admin/update-discount/update-discount.component';
 const routes: Routes = [
   {
     path: "",
@@ -28,6 +32,10 @@ const routes: Routes = [
       },
       {
         path: "details/:id",
+        component: DetailsComponent,
+      },
+      {
+        path: "products/details/:id",
         component: DetailsComponent,
       },
       {
@@ -84,6 +92,21 @@ const routes: Routes = [
         path: "people",
         component: UserPeople
       },
+        path: "outStock",
+        component: OutStockComponent
+      },
+      {
+        path: "discount",
+        component: DiscountComponent
+      },
+      {
+        path: "discount/Postdiscount",
+        component: PostDiscountComponent
+      },
+      {
+        path: "discount/update/:id",
+        component: UpdateDiscountComponent
+      }
     ]
   },
   { path: 'notfound', component: NotfoundComponent },

@@ -2,8 +2,6 @@
   <div class="relative mx-auto max-w-screen-xl px-4 py-8">
     <div>
       <h1 class="text-2xl font-bold lg:text-3xl">{{getProducts.name}}</h1>
-
-      <p class="mt-1 text-sm text-gray-500">SKU: #012345</p>
     </div>
 
     <div class="grid gap-8 lg:grid-cols-4 lg:items-start">
@@ -39,83 +37,28 @@
       </div>
 
       <div class="lg:sticky lg:top-0">
+        <div class="flex">
+          <legend class="text-lg font-bold">Giá bán:</legend>
+          <p class="text-xl font-bold pl-[10px]">${{getProducts.price}}</p>
+        </div>
+        <div class="flex">
+          <legend class="text-lg font-bold">Số lượng sản phẩm còn lại:</legend>
+          <p class="text-xl font-bold pl-[10px]">{{getProducts.soLuong}}</p>
+        </div>
         <form class="space-y-4 lg:pt-8">
-          <fieldset>
-            <legend class="text-lg font-bold">Color</legend>
-
-            <div class="mt-2 flex flex-wrap gap-1">
-              <label for="color_green" class="cursor-pointer">
-                <input type="radio" id="color_green" name="color" class="peer sr-only" checked />
-
-                <span
-                  class="block h-6 w-6 rounded-full border border-gray-200 bg-green-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-              </label>
-
-              <label for="color_blue" class="cursor-pointer">
-                <input type="radio" id="color_blue" name="color" class="peer sr-only" />
-
-                <span
-                  class="block h-6 w-6 rounded-full border border-gray-200 bg-blue-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-              </label>
-
-              <label for="color_pink" class="cursor-pointer">
-                <input type="radio" id="color_pink" name="color" class="peer sr-only" />
-
-                <span
-                  class="block h-6 w-6 rounded-full border border-gray-200 bg-pink-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-              </label>
-
-              <label for="color_red" class="cursor-pointer">
-                <input type="radio" id="color_red" name="color" class="peer sr-only" />
-
-                <span
-                  class="block h-6 w-6 rounded-full border border-gray-200 bg-red-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-              </label>
-
-              <label for="color_indigo" class="cursor-pointer">
-                <input type="radio" id="color_indigo" name="color" class="peer sr-only" />
-
-                <span
-                  class="block h-6 w-6 rounded-full border border-gray-200 bg-indigo-700 ring-1 ring-transparent ring-offset-1 peer-checked:ring-gray-300"></span>
-              </label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend class="text-lg font-bold">Material</legend>
-
-            <div class="mt-2 flex flex-wrap gap-1">
-              <label for="material_cotton" class="cursor-pointer">
-                <input type="radio" id="material_cotton" name="material" class="peer sr-only" checked />
-
-                <span class="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100">
-                  Cotton
-                </span>
-              </label>
-
-              <label for="material_wool" class="cursor-pointer">
-                <input type="radio" id="material_wool" name="material" class="peer sr-only" checked />
-
-                <span class="block rounded-full border border-gray-200 px-3 py-1 text-xs peer-checked:bg-gray-100">
-                  Wool
-                </span>
-              </label>
-            </div>
-          </fieldset>
-
+          <legend>Số lượng</legend>
+          <input type="number" min="1" max="10" [value]="1" [(ngModel)]="getSoLuong"
+            [ngModelOptions]="{standalone: true}"
+            class="px-4 py-2 font-semibold text-sm bg-white text-slate-700 border border-slate-300 rounded-md shadow-sm outline outline-2 outline-offset-2 outline-indigo-500 dark:bg-slate-700 dark:text-slate-200 dark:border-transparent">
+          <legend class="text-lg font-bold">Mã ưu đãi</legend>
           <div class="rounded border bg-gray-100 p-4">
             <p class="text-sm">
-              <span class="block"> Pay as low as $3/mo with 0% APR. </span>
-
-              <a href="" class="mt-1 inline-block underline"> Find out more </a>
+              <span class="block"> Nhập mã giảm giá (Nếu có) </span>
+              <input type="text" class="outline-none " [(ngModel)]="getdiscountCode"
+                [ngModelOptions]="{standalone: true}">
             </p>
           </div>
-
-          <div>
-            <p class="text-xl font-bold">${{getProducts.price}}</p>
-          </div>
-
-          <button type="submit" (click)="addCart()"
+          <button type=" submit" (click)="addCart()"
             class="w-full rounded bg-red-700 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white">
             Add to cart
           </button>
