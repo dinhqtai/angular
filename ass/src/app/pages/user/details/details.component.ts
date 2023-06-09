@@ -127,8 +127,6 @@ export class DetailsComponent implements OnInit {
         const idProducts = this.route.snapshot.paramMap.get('id');
         axios.put<Product>(`http://localhost:8088/api/products/${idProducts}`, this.getProducts)
         if (checkProductCart.length) {
-          localStorage.setItem('cart', JSON.stringify(this.setCart));
-          this.setCart.filter(data => data._id === this.getCart._id)
           this.setCart.filter(data => data._id === this.getCart._id).map((data) => {
             data.soLuong = data.soLuong + this.getCart.soLuong
           })
